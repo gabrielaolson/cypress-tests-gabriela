@@ -4,7 +4,11 @@
 
 ### Intructions to run the tests
 
-### Installing dependecies on package:
+## Installing Cypress
+
+`npm install cypress --save-dev`
+
+### Installing dependecies:
 
 `npm install`
 
@@ -17,8 +21,8 @@
 
 `npm run cy:open`
 
-### As the environment is opened I always created the user admin to use in the tests, so the tests have the right order to not fail
-### Users and products are deleted by tests.
+## As the environment is opened I always created the user admin to use in the tests, so the tests have the right order to not fail
+## Users and products are deleted by tests.
 
 
 
