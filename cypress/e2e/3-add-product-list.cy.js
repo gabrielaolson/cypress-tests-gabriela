@@ -14,7 +14,7 @@ beforeEach(() => {
     HomePage.visit();
 });
 
-describe('Flow to Add product to the list', () => {
+describe('7 - Flow to Add product to the list', () => {
     it('User should add product to the list successfully', () => {
         HomePage.verifyPageLoad();
         RegisterUserPage.openSignUp();

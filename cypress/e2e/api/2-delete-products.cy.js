@@ -2,7 +2,7 @@ let emailAdmin = "test_gabriela@mailinator.com";
 let password = "test123";
 let authToken;
 
-describe('DELETE Products', () => {
+describe('3 - DELETE Products', () => {
     
 
     before(() => {

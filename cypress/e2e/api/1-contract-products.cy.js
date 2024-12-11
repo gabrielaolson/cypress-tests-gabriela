@@ -7,7 +7,7 @@ let timestamp = Date.now();
 let authToken;
 let nameProduct = `Product Test ${timestamp}`
 
-describe('Contract Test - Response GET Products', () => {
+describe('1 - Contract Test - GET Products', () => {
 
   before(() => {
       cy.loginViaApi(emailAdmin, password).then((token) => {
@@ -64,7 +64,7 @@ describe('Contract Test - Response GET Products', () => {
     });
   });
 
-describe('POST request - Register products and verify Contract', () => {
+describe('2 - Contract Test - POST products', () => {
     before(() => {
         cy.loginViaApi(emailAdmin, password).then((token) => {
             authToken = token;
@@ -106,15 +106,7 @@ describe('POST request - Register products and verify Contract', () => {
                 cy.log(response.body);
                 expect(response.body).to.be.jsonSchema(schema);
               });
-              cy.get('@insertProducts').then((response) => {
-                expect(response.status).to.eq(201); 
-                cy.log(response.body);
-                expect(response.body).to.be.jsonSchema(schema);
-              });
-              cy.get('@insertProducts').then((response) => {
-                expect(response.status).to.eq(201); 
-                cy.log(response.body);
-                expect(response.body).to.be.jsonSchema(schema);
-              });
+              cy.get('@insertProducts');
+              cy.get('@insertProducts');
             });
         });

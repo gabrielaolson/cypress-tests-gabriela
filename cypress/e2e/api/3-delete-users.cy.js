@@ -5,7 +5,7 @@ const emailAdmin = "test_gabriela@mailinator.com";
 const password = "test123";
 let authToken;
 
-describe('DELETE Users', () => {
+describe('4 - DELETE Users', () => {
     before(() => {
         cy.loginViaApi(emailAdmin, password).then((token) => {
             authToken = token;

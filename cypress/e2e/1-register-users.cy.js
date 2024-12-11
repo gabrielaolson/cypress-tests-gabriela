@@ -17,35 +17,27 @@ beforeEach(() => {
     HomePage.visit();
 });
 
-describe('End user registration flow  - from Home Page', () => {
-
-    it('Should open the Home Page', () => {
-        HomePage.verifyPageLoad();
-    });
+describe('1 - End user registration flow  - from Home Page', () => {
     it('Should go to the register screen - fill in the details and complete the registration successfully', () => {
+        HomePage.verifyPageLoad();
         emailUser = createEmail();
         RegisterUserPage.openSignUp();
         RegisterUserPage.registerUserFromHomePage("admin", nameUser, emailUser, password);
     });
 });
 
-describe('Admin user registration flow - from Home Page', () => {
-    it('Should open the Home Page', () => {
-        HomePage.verifyPageLoad();
-    });
+describe('2 - Admin user registration flow - from Home Page', () => {
     it('Should go to the register screen - fill in the details and complete the registration successfully', () => {
+        HomePage.verifyPageLoad();
         emailAdmin = fixedEmailAdmin;
         RegisterUserPage.openSignUp();
         RegisterUserPage.registerUserFromHomePage("admin", nameAdmin, emailAdmin, password);
     });
 });
 
-describe('End user registration flow by admin user - Admin Page', () => {
-    it('Should open the Home Page', () => {
-        HomePage.verifyPageLoad();
-    });
-
+describe('3 - End user registration flow by admin user - Admin Page', () => {
     it('Admin user should successfully register an end user', () => {
+        HomePage.verifyPageLoad();
         LoginPage.loginAdmin(fixedEmailAdmin, password);
         AdminHomePage.registerUser()
         emailUser = createEmail();
@@ -57,12 +49,9 @@ describe('End user registration flow by admin user - Admin Page', () => {
 });
 
 
-describe('Admin user registration flow by admin user - Admin Page', () => {
-    it('Should open the Home Page', () => {
+describe('4 - Admin user registration flow by admin user - Admin Page', () => {
+    it('Admin user should successfully register an Admin user', () => {
         HomePage.verifyPageLoad();
-    });
-
-    it('Admin user should successfully register an admin user', () => {
         LoginPage.loginAdmin(fixedEmailAdmin, password);
         AdminHomePage.registerUser()
         emailAdmin = createEmail();
@@ -72,9 +61,9 @@ describe('Admin user registration flow by admin user - Admin Page', () => {
     })
 });
 
-describe('Delete end users that were created in the tests', () => {
+describe('5 - Delete 2 End users that were created in the tests', () => {
     it('Admin user should delete users successfully', () => {
-        HomePage.visit();
+        HomePage.verifyPageLoad();
         LoginPage.loginAdmin(fixedEmailAdmin, password);
         AdminHomePage.openListUsers();
         ListUsersPage.verifyPageLoadListaUsuarios();

@@ -22,11 +22,9 @@ beforeEach(() => {
     emailAdmin = createEmail();
 });
 
-describe('Flow User Admin registers a product', () => {
-    it('Should open the Home Page', () => {
-        HomePage.verifyPageLoad();
-    });
+describe('6 - Flow User Admin register a product', () => {
     it('Should register a product sucessfully', () => {
+        HomePage.verifyPageLoad();
         RegisterUserPage.openSignUp();
         RegisterUserPage.registerUserFromHomePage("admin", nameAdmin, emailAdmin, password);
         NavBarAdmin.openRegisterProductNav();
