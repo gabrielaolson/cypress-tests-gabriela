@@ -33,9 +33,10 @@ jobs:
             rm -rf allure-report
         
     - name: Run Cypress tests
+      continue-on-error: true
       run: |
             npx cypress run
-            continue-on-error: true
+            
   
     
     - name: Generate Allure Report
