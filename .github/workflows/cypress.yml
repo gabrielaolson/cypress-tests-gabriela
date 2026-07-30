@@ -4,10 +4,20 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   test:
     timeout-minutes: 60
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
@@ -15,23 +25,36 @@ jobs:
         node-version: lts/*
     - name: Install dependencies
       run: npm install
-    # - name: Install Playwright Browsers
-    #   run: npx playwright install --with-deps
+   
 
-    - name: Run Cypress tests
-      run: |
-            npx cypress run
-  
     - name: Clean old reports
       run: |
             rm -rf allure-results
             rm -rf allure-report
-            
+        
+    - name: Run Cypress tests
+      run: |
+            npx cypress run
+            continue-on-error: true
+  
+    
     - name: Generate Allure Report
+      if: always()
       run: npx allure generate allure-results --clean
 
     - name: Upload Allure Report
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: allure-report
         path: allure-report    
+    - name: Upload GitHub Pages artifact
+      if: always()
+      uses: actions/upload-pages-artifact@v3
+      with:
+       path: allure-report
+
+    - name: Deploy to GitHub Pages
+      if: always()
+      id: deployment
+      uses: actions/deploy-pages@v4
