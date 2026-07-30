@@ -1,30 +1,86 @@
-# cypress-project
+# Cypress Automation Framework
 
-### The project was built using POM(Page Object Model) to reuse the methods in the tests. This helps reduce code duplication and improve test case management.
+This project is an end-to-end and API test automation framework built with **Cypress** and **JavaScript**, following the **Page Object Model (POM)** design pattern to improve code reusability, readability, and maintainability.
 
-### Intructions to run the tests
+## Tech Stack
 
-## Installing Cypress
+- Cypress
+- JavaScript
+- Page Object Model (POM)
+- Allure Reports
+- GitHub Actions (CI)
+- GitHub Pages (Allure Report)
 
-`npm install cypress --save-dev`
+---
 
-### Installing dependecies:
+## Installation
 
-`npm install`
+Clone the repository and install the dependencies:
 
-### Running tests from root folder:
+```bash
+npm install
+```
 
-`npx cypress run`
+---
 
+## Running the Tests
 
-### Running the tests in UI mode:
+Run all tests in headless mode:
 
-`npm run cy:open`
+```bash
+npx cypress run
+```
 
-## As the environment is opened I always created the user admin to use in the tests, so the tests have the right order to not fail
-## Users and products are deleted by tests.
+or
 
+```bash
+npm run test
+```
 
+Run the tests and generate the Allure report:
 
+```bash
+npm run test:report
+```
+
+Open Cypress in interactive mode:
+
+```bash
+npm run cy:open
+```
+
+---
+
+## Test Reports
+
+The latest Allure Report is available at:
+
+**https://gabrielaolson.github.io/cypress-tests-gabriela/**
+
+GitHub Actions workflow:
+
+**https://github.com/gabrielaolson/cypress-tests-gabriela/actions**
+
+---
+
+## Project Structure
+
+```text
+cypress/
+├── e2e/
+├── page-objects/
+├── fixtures/
+├── support/
+├── screenshots/
+└── downloads/
+```
+
+---
+
+## Notes
+
+- The framework follows the **Page Object Model (POM)** to reduce code duplication and improve test maintenance.
+- Test data is managed automatically during execution.
+- Users and products created during the tests are removed by the test suite to keep the environment clean.
 
 
