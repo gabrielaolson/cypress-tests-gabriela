@@ -1,10 +1,10 @@
-import AdminHomePage from "../support/page-objects/AdminHomePage";
-import RegisterProductPage from "../support/page-objects/RegisterProductPage";
-import HomePage from "../support/page-objects/HomePage";
-import ListProductsPage from "../support/page-objects/ListProductsPage";
-import LoginPage from "../support/page-objects/LoginPage";
-import NavBarAdmin from "../support/page-objects/NavBarAdmin";
-import RegisterUserPage from "../support/page-objects/RegisterUserPage";
+import AdminHomePage from "../page-objects/AdminHomePage";
+import RegisterProductPage from "../page-objects/RegisterProductPage";
+import HomePage from "../page-objects/HomePage";
+import ListProductsPage from "../page-objects/ListProductsPage";
+import LoginPage from "../page-objects/LoginPage";
+import NavBarAdmin from "../page-objects/NavBarAdmin";
+import RegisterUserPage from "../page-objects/RegisterUserPage";
 import { createEmail } from "../support/createEmail";
 
 let timestamp = Date.now();

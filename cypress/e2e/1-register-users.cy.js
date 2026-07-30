@@ -1,9 +1,11 @@
-import HomePage from '../support/page-objects/HomePage';
-import RegisterUserPage from '../support/page-objects/RegisterUserPage';
-import LoginPage from '../support/page-objects/LoginPage';
-import AdminHomePage from '../support/page-objects/AdminHomePage';
-import ListUsersPage from '../support/page-objects/ListUsersPage';
+import HomePage from '../page-objects/HomePage';
+import RegisterUserPage from '../page-objects/RegisterUserPage';
+import LoginPage from '../page-objects/LoginPage';
+import AdminHomePage from '../page-objects/AdminHomePage';
+import ListUsersPage from '../page-objects/ListUsersPage';
 import { createEmail } from '../support/createEmail';
+
+
 
 let emailAdmin;
 let emailUser;

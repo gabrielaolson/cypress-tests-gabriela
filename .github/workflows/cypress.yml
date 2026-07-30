@@ -22,4 +22,16 @@ jobs:
       run: |
             npx cypress run
   
-       
+    - name: Clean old reports
+      run: |
+            rm -rf allure-results
+            rm -rf allure-report
+            
+    - name: Generate Allure Report
+      run: npx allure generate allure-results --clean
+
+    - name: Upload Allure Report
+      uses: actions/upload-artifact@v4
+      with:
+        name: allure-report
+        path: allure-report    

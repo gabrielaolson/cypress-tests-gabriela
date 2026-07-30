@@ -1,7 +1,7 @@
-import RegisterUserPage from "../support/page-objects/RegisterUserPage";
-import HomePage from "../support/page-objects/HomePage";
-import ShoppingListPage from "../support/page-objects/ShoppingListPage";
-import UserHomePage from "../support/page-objects/UserHomePage";
+import RegisterUserPage from "../page-objects/RegisterUserPage";
+import HomePage from "../page-objects/HomePage";
+import ShoppingListPage from "../page-objects/ShoppingListPage";
+import UserHomePage from "../page-objects/UserHomePage";
 
 let timestamp = Date.now();
 var nameUser = "Test-3-novo"

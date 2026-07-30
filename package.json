@@ -1,8 +1,12 @@
 {
     "scripts": {
-        "cy:open": "cypress open"
+        "cy:run": "cypress run",
+        "report": "allure serve allure-results",
+        "test:report": "cypress run && allure serve allure-results"
     },
     "devDependencies": {
+        "allure-commandline": "^2.43.0",
+        "allure-cypress": "^3.10.2",
         "chai-json-schema": "^1.5.1",
         "cypress": "^13.16.1",
         "cypress-xpath": "^2.0.1"
