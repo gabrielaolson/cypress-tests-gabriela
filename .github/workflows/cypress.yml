@@ -37,7 +37,21 @@ jobs:
       run: |
             npx cypress run
             
-  
+    - name: Checkout gh-pages
+      if: always()
+      uses: actions/checkout@v4
+      with:
+        ref: gh-pages
+        path: gh-pages
+        continue-on-error: true
+
+    - name: Restore Allure history
+      if: always()
+      run: |
+        if [ -d "gh-pages/history" ]; then
+        mkdir -p allure-results/history
+        cp -r gh-pages/history/* allure-results/history/
+        fi
     
     - name: Generate Allure Report
       if: always()
